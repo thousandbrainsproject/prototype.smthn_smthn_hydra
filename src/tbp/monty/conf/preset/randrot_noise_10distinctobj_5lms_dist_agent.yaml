@@ -1,11 +1,11 @@
 # @package _global_
 defaults:
-  - override /experiment: object_recognition
-  - override /experiment/experiment_config: eval
-  - override /experiment/logging: eval_benchmark
-  - override /monty: evidence_5lm_dist_noise
-  - override /environment/env_interface_config: habitat_5sensor_distance
-  - override /environment/eval_env_interface_args: 10_distinct_random
+  - /experiment/experiment_class: object_recognition
+  - /experiment/experiment_args: eval
+  - /experiment/logging: eval_benchmark
+  - /monty: evidence_5lm_dist_noise
+  - /environment/env_interface_config: habitat_5sensor_distance
+  - /environment/eval_env_interface_args: 10_distinct_random
 
 experiment:
   config:

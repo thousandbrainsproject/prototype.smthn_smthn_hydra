@@ -1,8 +1,8 @@
 # @package _global_
 defaults:
-  - override /experiment: object_recognition
-  - override /experiment/experiment_config: eval_comp
-  - override /experiment/logging: eval_evidence
-  - override /monty: evidence_2lm_comp_monolithic
-  - override /environment/env_interface_config: habitat_2sensor_comp
-  - override /environment/eval_env_interface_args: comp_lvl1_predefined
+  - /experiment/experiment_class: object_recognition
+  - /experiment/experiment_args: eval_comp
+  - /experiment/logging: eval_evidence
+  - /monty: evidence_2lm_comp_monolithic
+  - /environment/env_interface_config: habitat_2sensor_comp
+  - /environment/eval_env_interface_args: comp_lvl1_predefined

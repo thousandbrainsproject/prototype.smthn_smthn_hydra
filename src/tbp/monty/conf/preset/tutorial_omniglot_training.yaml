@@ -1,10 +1,10 @@
 # @package _global_
 defaults:
-  - override /experiment: supervised_pretraining
-  - override /experiment/experiment_config: supervised_train_rotations
-  - override /experiment/logging: omniglot_train
-  - override /environment/env_interface_config: omniglot
-  - override /environment/train_env_interface_args: omniglot_standard
+  - /experiment/experiment_class: supervised_pretraining
+  - /experiment/experiment_args: supervised_train_rotations
+  - /experiment/logging: omniglot_train
+  - /environment/env_interface_config: omniglot
+  - /environment/train_env_interface_args: omniglot_standard
 
 experiment:
   config:

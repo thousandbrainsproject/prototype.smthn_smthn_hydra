@@ -1,10 +1,10 @@
 # @package _global_
 defaults:
-  - override /experiment: object_recognition
-  - override /experiment/experiment_config: eval_evidence
-  - override /experiment/logging: omniglot_eval
-  - override /environment/env_interface_config: omniglot
-  - override /environment/eval_env_interface_args: omniglot_standard
+  - /experiment/experiment_class: object_recognition
+  - /experiment/experiment_args: eval_evidence
+  - /experiment/logging: omniglot_eval
+  - /environment/env_interface_config: omniglot
+  - /environment/eval_env_interface_args: omniglot_standard
 
 experiment:
   config:

@@ -1,11 +1,11 @@
 # @package _global_
 defaults:
-  - override /experiment: object_recognition
-  - override /experiment/experiment_config: eval_evidence
-  - override /experiment/logging: eval_evidence
-  - override /monty: evidence_1lm_worldimage
-  - override /environment/env_interface_config: saccade_on_image_from_stream
-  - override /environment/eval_env_interface_args: world_image_from_stream
+  - /experiment/experiment_class: object_recognition
+  - /experiment/experiment_args: eval_evidence
+  - /experiment/logging: eval_evidence
+  - /monty: evidence_1lm_worldimage
+  - /environment/env_interface_config: saccade_on_image_from_stream
+  - /environment/eval_env_interface_args: world_image_from_stream
 
 experiment:
   config:

@@ -1,11 +1,11 @@
 # @package _global_
 defaults:
-  - override /experiment: object_recognition
-  - override /experiment/experiment_config: unsupervised_train
-  - override /experiment/logging: tutorial_detailed
-  - override /monty: evidence_1lm_surf_unsupervised_train
-  - override /environment/env_interface_config: habitat_1sensor_surface
-  - override /environment/train_env_interface_args: 2obj_mug_bowl_random
+  - /experiment/experiment_class: object_recognition
+  - /experiment/experiment_args: unsupervised_train
+  - /experiment/logging: tutorial_detailed
+  - /monty: evidence_1lm_surf_unsupervised_train
+  - /environment/env_interface_config: habitat_1sensor_surface
+  - /environment/train_env_interface_args: 2obj_mug_bowl_random
 
 experiment:
   config:

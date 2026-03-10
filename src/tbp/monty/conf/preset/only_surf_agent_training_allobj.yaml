@@ -1,8 +1,8 @@
 # @package _global_
 defaults:
-  - override /experiment: supervised_pretraining
-  - override /experiment/experiment_config: supervised_train_rotations
-  - override /experiment/logging: training_detailed
-  - override /monty: displacement_1lm_surf_train
-  - override /environment/env_interface_config: habitat_1sensor_surface
-  - override /environment/train_env_interface_args: 77_all_predefined
+  - /experiment/experiment_class: supervised_pretraining
+  - /experiment/experiment_args: supervised_train_rotations
+  - /experiment/logging: training_detailed
+  - /monty: displacement_1lm_surf_train
+  - /environment/env_interface_config: habitat_1sensor_surface
+  - /environment/train_env_interface_args: 77_all_predefined
