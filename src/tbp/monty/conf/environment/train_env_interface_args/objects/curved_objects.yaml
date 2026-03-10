@@ -1,4 +1,4 @@
-# @package experiment.config.train_env_interface_args.objects
+# @package experiment.config.train_env_interface_args
 object_names:
 - 011_cylinder
 - 016_sphere
