@@ -1,0 +1,4 @@
+# @package _group_
+object_names:
+- 001_cube
+- 006_disk

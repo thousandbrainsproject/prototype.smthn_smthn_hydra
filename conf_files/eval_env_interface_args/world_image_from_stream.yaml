@@ -1,0 +1,3 @@
+# @package experiment.config
+eval_env_interface_args: {}
+eval_env_interface_class: ${monty.class:tbp.monty.frameworks.environments.embodied_data.SaccadeOnImageFromStreamEnvironmentInterface}

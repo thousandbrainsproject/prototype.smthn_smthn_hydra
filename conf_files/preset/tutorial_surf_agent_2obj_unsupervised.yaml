@@ -1,0 +1,64 @@
+# @package _global_
+defaults:
+  - override /experiment: object_recognition
+  - override /experiment_config: unsupervised_train
+  - override /logging: tutorial_detailed
+  - override /monty_config: evidence_1lm_surf_unsupervised_train
+  - override /env_interface_config: habitat_1sensor_surface
+  - override /train_env_interface_args: 2obj_mug_bowl_random
+
+experiment:
+  config:
+    max_train_steps: 2000
+    monty_config:
+      learning_module_configs:
+        learning_module_0:
+          learning_module_args:
+            tolerances:
+              patch:
+                hsv: ${np.array:[0.05, 0.1, 0.1]}
+                principal_curvatures_log:
+                - 1
+                - 1
+            feature_weights:
+              patch:
+                hsv: ${np.array:[1, 0.5, 0.5]}
+            x_percent_threshold: 20
+            graph_delta_thresholds:
+              patch:
+                distance: 0.01
+                pose_vectors: ${np.array:[np.pi / 8, np.pi * 2, np.pi * 2]}
+                principal_curvatures_log:
+                - 1.0
+                - 1.0
+                hsv:
+                - 0.1
+                - 1
+                - 1
+            object_evidence_threshold: 100
+            required_symmetry_evidence: 20
+            hypotheses_updater_args:
+              max_nneighbors: 5
+      sensor_module_configs:
+        sensor_module_0:
+          sensor_module_args:
+            features:
+            - pose_vectors
+            - pose_fully_defined
+            - on_object
+            - object_coverage
+            - min_depth
+            - mean_depth
+            - hsv
+            - principal_curvatures
+            - principal_curvatures_log
+            - gaussian_curvature
+            - mean_curvature
+            - gaussian_curvature_sc
+            - mean_curvature_sc
+            save_raw_obs: true
+        sensor_module_1:
+          sensor_module_args:
+            save_raw_obs: true
+    logging:
+      run_name: surf_agent_2obj_unsupervised

@@ -1,0 +1,8 @@
+# @package _global_
+defaults:
+  - override /experiment: object_recognition
+  - override /experiment_config: eval_comp
+  - override /logging: eval_evidence
+  - override /monty_config: evidence_2lm_comp
+  - override /env_interface_config: habitat_2sensor_comp
+  - override /eval_env_interface_args: comp_lvl1_predefined

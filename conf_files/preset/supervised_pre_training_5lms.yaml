@@ -1,0 +1,8 @@
+# @package _global_
+defaults:
+  - override /experiment: supervised_pretraining
+  - override /experiment_config: supervised_train
+  - override /logging: training_silent
+  - override /monty_config: displacement_5lm_dist_train
+  - override /env_interface_config: habitat_5sensor_distance
+  - override /train_env_interface_args: 10_distinct_predefined

@@ -1,0 +1,12 @@
+# @package _global_
+defaults:
+  - override /experiment: object_recognition
+  - override /experiment_config: eval
+  - override /logging: eval_benchmark
+  - override /monty_config: evidence_1lm_surf_ci
+  - override /env_interface_config: habitat_1sensor_surface
+  - override /eval_env_interface_args: 77_all_predefined
+
+experiment:
+  config:
+    n_eval_epochs: ${benchmarks.rotations_3_count}
