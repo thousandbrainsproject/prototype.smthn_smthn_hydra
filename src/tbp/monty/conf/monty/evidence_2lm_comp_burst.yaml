@@ -1,0 +1,26 @@
+# @package experiment.config
+defaults:
+  - motor_system_config: informed
+  - learning_module_configs: evidence_2lm_comp_burst
+  - sensor_module_configs: 2sm_comp
+
+model_name_or_path: ${benchmarks.pretrained_dir}/supervised_pre_training_objects_with_logos_lvl1_comp_models_burst_sampling/pretrained/
+
+monty_config:
+  monty_class: ${monty.class:tbp.monty.frameworks.models.evidence_matching.model.MontyForEvidenceGraphMatching}
+  monty_args:
+    num_exploratory_steps: 1000
+    min_eval_steps: ${benchmarks.min_eval_steps}
+    min_train_steps: 3
+    max_total_steps: 2500
+  sm_to_agent_dict:
+    patch_0: ${monty.agent_id:agent_id_0}
+    patch_1: ${monty.agent_id:agent_id_0}
+    view_finder: ${monty.agent_id:agent_id_0}
+  sm_to_lm_matrix:
+  - - 0
+  - - 1
+  lm_to_lm_matrix:
+  - []
+  - - 0
+  lm_to_lm_vote_matrix: null

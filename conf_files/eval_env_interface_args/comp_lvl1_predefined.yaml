@@ -1,7 +1,0 @@
-# @package experiment.config
-defaults:
-  - eval_env_interface_args/objects: comp_lvl1
-  - eval_env_interface_args/object_init_sampler: predefined_all
-  - eval_env_interface_args/parent_to_child_mapping: compositional
-
-eval_env_interface_class: ${monty.class:tbp.monty.frameworks.environments.embodied_data.InformedEnvironmentInterface}

@@ -1,8 +1,0 @@
-# @package _global_
-defaults:
-  - override /experiment: supervised_pretraining
-  - override /experiment_config: supervised_train_comp_monolithic
-  - override /logging: training_silent_info
-  - override /monty_config: evidence_2lm_comp_monolithic_train
-  - override /env_interface_config: habitat_2sensor_comp
-  - override /train_env_interface_args: comp_lvl1_predefined

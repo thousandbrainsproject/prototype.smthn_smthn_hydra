@@ -1,0 +1,8 @@
+# @package _global_
+defaults:
+  - override /experiment: supervised_pretraining
+  - override /experiment/experiment_config: tutorial_train
+  - override /experiment/logging: training_silent
+  - override /monty: displacement_1lm_dist_train
+  - override /environment/env_interface_config: habitat_1sensor_distance
+  - override /environment/train_env_interface_args: mug_only_predefined

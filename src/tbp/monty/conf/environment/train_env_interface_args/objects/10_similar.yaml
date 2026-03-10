@@ -1,0 +1,12 @@
+# @package experiment.config.train_env_interface_args.objects
+object_names:
+- mug
+- bowl
+- large_marker
+- potted_meat_can
+- tomato_soup_can
+- mustard_bottle
+- adjustable_wrench
+- phillips_screwdriver
+- flat_screwdriver
+- extra_large_clamp

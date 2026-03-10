@@ -1,7 +1,0 @@
-# @package experiment.config
-defaults:
-  - eval_env_interface_args/objects: 10_similar
-  - eval_env_interface_args/object_init_sampler: random_rotation
-  - eval_env_interface_args/parent_to_child_mapping: none
-
-eval_env_interface_class: ${monty.class:tbp.monty.frameworks.environments.embodied_data.InformedEnvironmentInterface}

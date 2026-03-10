@@ -1,0 +1,13 @@
+# @package _global_
+defaults:
+  - override /experiment: supervised_pretraining
+  - override /experiment/experiment_config: supervised_train_rotations
+  - override /experiment/logging: tutorial_silent
+  - override /monty: displacement_5lm_dist_tutorial_train
+  - override /environment/env_interface_config: habitat_5sensor_distance_tutorial
+  - override /environment/train_env_interface_args: 2obj_mug_banana_predefined
+
+experiment:
+  config:
+    logging:
+      run_name: dist_agent_5lm_2obj_train

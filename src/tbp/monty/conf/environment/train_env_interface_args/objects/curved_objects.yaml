@@ -1,0 +1,5 @@
+# @package experiment.config.train_env_interface_args.objects
+object_names:
+- 011_cylinder
+- 016_sphere
+- 023_mug

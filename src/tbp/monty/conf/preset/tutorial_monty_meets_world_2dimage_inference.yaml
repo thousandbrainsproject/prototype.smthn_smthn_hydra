@@ -1,0 +1,14 @@
+# @package _global_
+defaults:
+  - override /experiment: object_recognition
+  - override /experiment/experiment_config: eval_evidence
+  - override /experiment/logging: eval_evidence
+  - override /monty: evidence_1lm_worldimage
+  - override /environment/env_interface_config: saccade_on_image
+  - override /environment/eval_env_interface_args: world_image_standard
+
+experiment:
+  config:
+    show_sensor_output: true
+    logging:
+      run_name: monty_meets_world_2dimage_inference

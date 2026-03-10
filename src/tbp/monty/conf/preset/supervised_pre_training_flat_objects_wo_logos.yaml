@@ -1,0 +1,12 @@
+# @package _global_
+defaults:
+  - override /experiment: supervised_pretraining
+  - override /experiment/experiment_config: supervised_train_comp_lm0
+  - override /experiment/logging: training_silent_info
+  - override /monty: evidence_2lm_comp_monolithic_train
+  - override /environment/env_interface_config: habitat_2sensor_comp
+  - override /environment/train_env_interface_args: flat_objects_wo_logos_predefined
+
+experiment:
+  config:
+    model_name_or_path: ''

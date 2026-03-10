@@ -1,0 +1,4 @@
+# @package experiment.config.eval_env_interface_args.objects
+object_names:
+- mug
+- banana

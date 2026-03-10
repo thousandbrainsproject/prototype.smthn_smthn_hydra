@@ -1,0 +1,12 @@
+# @package experiment.config.train_env_interface_args.objects
+object_names:
+- mug
+- bowl
+- potted_meat_can
+- spoon
+- strawberry
+- mustard_bottle
+- dice
+- golf_ball
+- c_lego_duplo
+- banana

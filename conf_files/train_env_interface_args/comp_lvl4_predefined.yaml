@@ -1,7 +1,0 @@
-# @package experiment.config
-defaults:
-  - train_env_interface_args/objects: comp_lvl4
-  - train_env_interface_args/object_init_sampler: predefined_all
-  - train_env_interface_args/parent_to_child_mapping: none
-
-train_env_interface_class: ${monty.class:tbp.monty.frameworks.environments.embodied_data.InformedEnvironmentInterface}

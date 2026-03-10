@@ -1,0 +1,22 @@
+# @package experiment.config
+defaults:
+  - motor_system_config: surface_ci_no_goal
+  - learning_module_configs: displacement_1lm_full
+  - sensor_module_configs: 1sm_surface_training
+
+model_name_or_path: ''
+
+monty_config:
+  monty_class: ${monty.class:tbp.monty.frameworks.models.graph_matching.MontyForGraphMatching}
+  monty_args:
+    num_exploratory_steps: 1000
+    min_eval_steps: 3
+    min_train_steps: 3
+    max_total_steps: 2500
+  sm_to_agent_dict:
+    patch: ${monty.agent_id:agent_id_0}
+    view_finder: ${monty.agent_id:agent_id_0}
+  sm_to_lm_matrix:
+  - - 0
+  lm_to_lm_matrix: null
+  lm_to_lm_vote_matrix: null

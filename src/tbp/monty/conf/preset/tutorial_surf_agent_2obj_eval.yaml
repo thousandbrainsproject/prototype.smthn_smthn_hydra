@@ -1,0 +1,92 @@
+# @package _global_
+defaults:
+  - override /experiment: object_recognition
+  - override /experiment/experiment_config: eval
+  - override /experiment/logging: tutorial_detailed
+  - override /monty: evidence_1lm_surf_ci_noise
+  - override /environment/env_interface_config: habitat_1sensor_surface
+
+experiment:
+  config:
+    show_sensor_output: true
+    n_eval_epochs: 3
+    model_name_or_path: ${path.expanduser:"~/tbp/results/monty/projects/surf_agent_1lm_2obj_train/pretrained"}
+    monty_config:
+      learning_module_configs:
+        learning_module_0:
+          learning_module_args:
+            tolerances:
+              patch:
+                hsv: ${np.array:[0.1, 0.2, 0.2]}
+                principal_curvatures_log:
+                - 1
+                - 1
+            feature_weights:
+              patch:
+                hsv: ${np.array:[1, 0.5, 0.5]}
+            x_percent_threshold: 20
+            evidence_threshold_config: 80%
+            gsg:
+              _target_: tbp.monty.frameworks.models.goal_state_generation.EvidenceGoalStateGenerator
+              goal_tolerances:
+                location: 0.015
+              min_post_goal_success_steps: 5
+      sensor_module_configs:
+        sensor_module_0:
+          sensor_module_args:
+            features:
+            - pose_vectors
+            - pose_fully_defined
+            - on_object
+            - object_coverage
+            - min_depth
+            - mean_depth
+            - hsv
+            - principal_curvatures
+            - principal_curvatures_log
+            delta_thresholds:
+              on_object: 0
+              n_steps: 20
+              hsv:
+              - 0.1
+              - 0.1
+              - 0.1
+              pose_vectors: ${np.list_eval:[np.pi / 4, np.pi * 2, np.pi * 2]}
+              principal_curvatures_log:
+              - 2
+              - 2
+              distance: 0.01
+            noise_params:
+              features:
+                pose_vectors: 2
+                hsv: ${np.array:[0.1, 0.2, 0.2]}
+                principal_curvatures_log: 0.1
+                pose_fully_defined: 0.01
+              location: 0.002
+    eval_env_interface_args:
+      parent_to_child_mapping: null
+      object_names:
+      - mug
+      - banana
+      object_init_sampler:
+        _target_: tbp.monty.frameworks.environments.object_init_samplers.Predefined
+        rotations:
+        - ${np.array:[0.0, 15.0, 30.0]}
+        - ${np.array:[7.0, 77.0, 2.0]}
+        - ${np.array:[81.0, 33.0, 90.0]}
+    eval_env_interface_class: ${monty.class:tbp.monty.frameworks.environments.embodied_data.InformedEnvironmentInterface}
+    train_env_interface_args:
+      parent_to_child_mapping: null
+      object_names:
+      - mug
+      - banana
+      object_init_sampler:
+        _target_: tbp.monty.frameworks.environments.object_init_samplers.Predefined
+        rotations:
+        - ${np.array:[0.0, 15.0, 30.0]}
+        - ${np.array:[7.0, 77.0, 2.0]}
+        - ${np.array:[81.0, 33.0, 90.0]}
+    train_env_interface_class: ${monty.class:tbp.monty.frameworks.environments.embodied_data.InformedEnvironmentInterface}
+    logging:
+      run_name: surf_agent_2obj_eval
+      wandb_group: gm_eval_runs

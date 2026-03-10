@@ -1,0 +1,12 @@
+# @package _global_
+defaults:
+  - override /experiment: supervised_pretraining
+  - override /experiment/experiment_config: supervised_train_comp
+  - override /experiment/logging: training_silent_info
+  - override /monty: evidence_2lm_comp_train
+  - override /environment/env_interface_config: habitat_2sensor_comp
+  - override /environment/train_env_interface_args: comp_lvl3_predefined
+
+experiment:
+  config:
+    model_name_or_path: ${path.expanduser:${oc.env:MONTY_MODELS}/pretrained_ycb_v12/supervised_pre_training_curved_objects_after_flat_and_logo/pretrained/}

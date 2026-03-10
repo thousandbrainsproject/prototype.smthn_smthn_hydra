@@ -1,8 +1,0 @@
-# @package _global_
-defaults:
-  - override /experiment: object_recognition
-  - override /experiment_config: eval_evidence
-  - override /logging: eval_evidence
-  - override /monty_config: evidence_1lm_worldimage
-  - override /env_interface_config: saccade_on_image_hand_intrusion
-  - override /eval_env_interface_args: world_image_standard

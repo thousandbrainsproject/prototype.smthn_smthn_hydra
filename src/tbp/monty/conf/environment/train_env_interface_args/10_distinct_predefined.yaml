@@ -1,0 +1,7 @@
+# @package experiment.config
+defaults:
+  - objects: 10_distinct
+  - object_init_sampler: predefined_all
+  - parent_to_child_mapping: none
+
+train_env_interface_class: ${monty.class:tbp.monty.frameworks.environments.embodied_data.EnvironmentInterfacePerObject}

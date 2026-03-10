@@ -1,0 +1,7 @@
+# @package experiment.config
+defaults:
+  - objects: numenta_lab
+  - object_init_sampler: random_rotation
+  - parent_to_child_mapping: none
+
+eval_env_interface_class: ${monty.class:tbp.monty.frameworks.environments.embodied_data.InformedEnvironmentInterface}

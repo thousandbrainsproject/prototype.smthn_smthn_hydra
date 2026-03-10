@@ -1,0 +1,40 @@
+# @package _global_
+defaults:
+  - override /experiment: object_recognition
+  - override /experiment/experiment_config: eval
+  - override /experiment/logging: eval_benchmark
+  - override /monty: evidence_1lm_dist_noise_nn5
+  - override /environment/env_interface_config: habitat_1sensor_distance
+  - override /environment/eval_env_interface_args: 10_distinct_multi_distractor
+
+experiment:
+  config:
+    n_eval_epochs: ${benchmarks.rotations_all_count}
+    monty_config:
+      sensor_module_configs:
+        sensor_module_0:
+          sensor_module_args:
+            features:
+            - pose_vectors
+            - pose_fully_defined
+            - on_object
+            - object_coverage
+            - hsv
+            - principal_curvatures_log
+            delta_thresholds:
+              on_object: 0
+              n_steps: 20
+              hsv:
+              - 0.1
+              - 0.1
+              - 0.1
+              pose_vectors: ${np.list_eval:[np.pi / 4, np.pi * 2, np.pi * 2]}
+              principal_curvatures_log:
+              - 2
+              - 2
+              distance: 0.01
+            save_raw_obs: false
+            noise_params: null
+        sensor_module_1:
+          sensor_module_args:
+            save_raw_obs: false
