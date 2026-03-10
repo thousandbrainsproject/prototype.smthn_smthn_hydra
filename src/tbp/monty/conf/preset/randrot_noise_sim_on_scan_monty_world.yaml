@@ -1,11 +1,11 @@
 # @package _global_
 defaults:
-  - /experiment/experiment_class: object_recognition
   - /experiment/experiment_args: eval_evidence
   - /experiment/logging: eval_evidence
   - /monty: evidence_1lm_dist_noise_compact
   - /environment/env_interface_config: habitat_1sensor_distance_numenta_lab
   - /environment/eval_env_interface_args: numenta_lab_random
+  - /experiment/experiment_class: object_recognition
 
 experiment:
   config:
@@ -23,3 +23,5 @@ experiment:
         sensor_module_1:
           sensor_module_args:
             save_raw_obs: false
+    logging:
+      run_name: randrot_noise_sim_on_scan_monty_world

@@ -1,12 +1,14 @@
 # @package _global_
 defaults:
-  - /experiment/experiment_class: object_recognition
   - /experiment/experiment_args: eval
   - /experiment/logging: eval_benchmark
   - /monty: evidence_5lm_dist_noise
   - /environment/env_interface_config: habitat_5sensor_distance
   - /environment/eval_env_interface_args: 10_distinct_random
+  - /experiment/experiment_class: object_recognition
 
 experiment:
   config:
     max_total_steps: 6000
+    logging:
+      run_name: randrot_noise_10distinctobj_5lms_dist_agent

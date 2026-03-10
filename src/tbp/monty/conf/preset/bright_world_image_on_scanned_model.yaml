@@ -1,8 +1,13 @@
 # @package _global_
 defaults:
-  - /experiment/experiment_class: object_recognition
   - /experiment/experiment_args: eval_evidence
   - /experiment/logging: eval_evidence
   - /monty: evidence_1lm_worldimage
   - /environment/env_interface_config: saccade_on_image_bright
   - /environment/eval_env_interface_args: world_image_standard
+  - /experiment/experiment_class: object_recognition
+
+experiment:
+  config:
+    logging:
+      run_name: bright_world_image_on_scanned_model

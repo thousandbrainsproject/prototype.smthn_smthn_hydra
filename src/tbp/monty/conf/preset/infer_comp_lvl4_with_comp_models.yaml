@@ -1,8 +1,13 @@
 # @package _global_
 defaults:
-  - /experiment/experiment_class: object_recognition
   - /experiment/experiment_args: eval_comp
   - /experiment/logging: eval_evidence
   - /monty: evidence_2lm_comp
   - /environment/env_interface_config: habitat_2sensor_comp
   - /environment/eval_env_interface_args: comp_lvl4_predefined
+  - /experiment/experiment_class: object_recognition
+
+experiment:
+  config:
+    logging:
+      run_name: infer_comp_lvl4_with_comp_models

@@ -1,11 +1,11 @@
 # @package _global_
 defaults:
-  - /experiment/experiment_class: supervised_pretraining
   - /experiment/experiment_args: supervised_train_rotations
   - /experiment/logging: tutorial_silent
   - /monty: displacement_5lm_dist_tutorial_train
   - /environment/env_interface_config: habitat_5sensor_distance_tutorial
   - /environment/train_env_interface_args: 2obj_mug_banana_predefined
+  - /experiment/experiment_class: supervised_pretraining
 
 experiment:
   config:

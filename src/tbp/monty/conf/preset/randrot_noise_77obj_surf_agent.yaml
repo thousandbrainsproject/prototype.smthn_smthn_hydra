@@ -1,12 +1,14 @@
 # @package _global_
 defaults:
-  - /experiment/experiment_class: object_recognition
   - /experiment/experiment_args: eval
   - /experiment/logging: eval_benchmark
   - /monty: evidence_1lm_surf_ci_noise
   - /environment/env_interface_config: habitat_1sensor_surface
   - /environment/eval_env_interface_args: 77_all_random
+  - /experiment/experiment_class: object_recognition
 
 experiment:
   config:
     n_eval_epochs: ${benchmarks.rotations_3_count}
+    logging:
+      run_name: randrot_noise_77obj_surf_agent

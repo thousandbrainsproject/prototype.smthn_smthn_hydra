@@ -1,13 +1,15 @@
 # @package _global_
 defaults:
-  - /experiment/experiment_class: object_recognition
   - /experiment/experiment_args: unsupervised_train
   - /experiment/logging: training_silent
   - /monty: evidence_1lm_surf_unsupervised_train
   - /environment/env_interface_config: habitat_1sensor_surface
   - /environment/train_env_interface_args: 10_similar_predefined
+  - /experiment/experiment_class: object_recognition
 
 experiment:
   config:
     max_total_steps: 4000
     n_eval_epochs: ${benchmarks.rotations_all_count}
+    logging:
+      run_name: surf_agent_unsupervised_10simobj

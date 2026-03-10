@@ -7,6 +7,7 @@ max_eval_steps: 500
 max_total_steps: 5000
 n_train_epochs: 3
 n_eval_epochs: 10
+model_name_or_path: ''
 min_lms_match: 1
 seed: 42
 supervised_lm_ids: []

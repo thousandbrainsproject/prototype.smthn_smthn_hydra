@@ -1,18 +1,13 @@
 # @package experiment.config
 defaults:
   - motor_system_config: surface_ci
+  - monty_core: evidence_1lm_surf_ci_noise
   - learning_module_configs: evidence_1lm_nn10
   - sensor_module_configs: 1sm_surface_noise
 
 model_name_or_path: ${benchmarks.pretrained_dir}/surf_agent_1lm_10distinctobj/pretrained/
 
 monty_config:
-  monty_class: ${monty.class:tbp.monty.frameworks.models.evidence_matching.model.MontyForEvidenceGraphMatching}
-  monty_args:
-    num_exploratory_steps: 1000
-    min_eval_steps: ${benchmarks.min_eval_steps}
-    min_train_steps: 3
-    max_total_steps: 2500
   sm_to_agent_dict:
     patch: ${monty.agent_id:agent_id_0}
     view_finder: ${monty.agent_id:agent_id_0}

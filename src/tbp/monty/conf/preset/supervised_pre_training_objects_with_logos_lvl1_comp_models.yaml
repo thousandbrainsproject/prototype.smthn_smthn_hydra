@@ -1,8 +1,13 @@
 # @package _global_
 defaults:
-  - /experiment/experiment_class: supervised_pretraining
   - /experiment/experiment_args: supervised_train_comp
   - /experiment/logging: training_silent_info
   - /monty: evidence_2lm_comp_train
   - /environment/env_interface_config: habitat_2sensor_comp
   - /environment/train_env_interface_args: comp_lvl1_predefined
+  - /experiment/experiment_class: supervised_pretraining
+
+experiment:
+  config:
+    logging:
+      run_name: supervised_pre_training_objects_with_logos_lvl1_comp_models

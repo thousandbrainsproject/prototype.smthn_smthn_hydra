@@ -1,12 +1,12 @@
 # @package _global_
 defaults:
-  - /experiment/experiment_class: object_recognition
   - /experiment/experiment_args: unsupervised_train
   - /experiment/logging: training_detailed
   - /monty: evidence_1lm_surf_unsupervised_train
   - /environment/env_interface_config: habitat_1sensor_surface
   - /environment/train_env_interface_args: 10_distinct_random
   - /environment/eval_env_interface_args: 10_distinct_predefined
+  - /experiment/experiment_class: object_recognition
 
 experiment:
   config:
@@ -14,6 +14,7 @@ experiment:
     max_total_steps: 4000
     n_train_epochs: 10
     logging:
+      run_name: surf_agent_unsupervised_10distinctobj_noise
       python_log_level: INFO
       wandb_group: debugging
     monty_config:

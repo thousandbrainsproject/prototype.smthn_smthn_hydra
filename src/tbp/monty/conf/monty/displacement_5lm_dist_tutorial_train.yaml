@@ -1,18 +1,13 @@
 # @package experiment.config
 defaults:
   - motor_system_config: naive_scan
+  - monty_core: displacement_5lm_dist_tutorial_train
   - learning_module_configs: displacement_5lm_tutorial
   - sensor_module_configs: 5sm_distance_tutorial
 
 model_name_or_path: ''
 
 monty_config:
-  monty_class: ${monty.class:tbp.monty.frameworks.models.graph_matching.MontyForGraphMatching}
-  monty_args:
-    num_exploratory_steps: 500
-    min_eval_steps: 3
-    min_train_steps: 3
-    max_total_steps: 2500
   sm_to_agent_dict:
     patch_0: ${monty.agent_id:agent_id_0}
     patch_1: ${monty.agent_id:agent_id_0}

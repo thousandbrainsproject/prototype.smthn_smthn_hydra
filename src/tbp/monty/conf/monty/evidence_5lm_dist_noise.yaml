@@ -1,18 +1,13 @@
 # @package experiment.config
 defaults:
   - motor_system_config: informed
+  - monty_core: evidence_5lm_dist_noise
   - learning_module_configs: evidence_5lm
   - sensor_module_configs: 5sm_distance_noise
 
 model_name_or_path: ${benchmarks.pretrained_dir}/supervised_pre_training_5lms/pretrained/
 
 monty_config:
-  monty_class: ${monty.class:tbp.monty.frameworks.models.evidence_matching.model.MontyForEvidenceGraphMatching}
-  monty_args:
-    num_exploratory_steps: 1000
-    min_eval_steps: ${benchmarks.min_eval_steps}
-    min_train_steps: 3
-    max_total_steps: 2500
   sm_to_agent_dict:
     patch_0: ${monty.agent_id:agent_id_0}
     patch_1: ${monty.agent_id:agent_id_0}

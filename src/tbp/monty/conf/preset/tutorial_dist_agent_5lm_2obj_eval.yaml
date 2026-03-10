@@ -1,10 +1,10 @@
 # @package _global_
 defaults:
-  - /experiment/experiment_class: object_recognition
   - /experiment/experiment_args: eval_evidence
   - /experiment/logging: tutorial_detailed
   - /monty: displacement_5lm_dist_tutorial_train
   - /environment/env_interface_config: habitat_5sensor_distance_tutorial
+  - /experiment/experiment_class: object_recognition
 
 experiment:
   config:

@@ -1,12 +1,12 @@
 # @package experiment.config.eval_env_interface_args
 object_names:
 - mug
-- bowl
-- large_marker
-- potted_meat_can
-- tomato_soup_can
-- mustard_bottle
-- adjustable_wrench
-- phillips_screwdriver
-- flat_screwdriver
-- extra_large_clamp
+- e_cups
+- knife
+- fork
+- spoon
+- c_cups
+- d_cups
+- cracker_box
+- sugar_box
+- pudding_box
